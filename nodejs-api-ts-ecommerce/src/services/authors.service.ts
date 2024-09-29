@@ -2,16 +2,9 @@ import createError from "http-errors";
 // Kết nối trực tiếp với Database
 import Author from "../models/author.model";
 import { ObjectId } from "mongoose";
+import { IAuthor } from "../types/models";
 
-type TAuthor = {
-  _id: ObjectId;
-  image: String;
-  first_name: String;
-  last_name: String;
-  birthDate: Date;
-  nationality: String;
-  bio: String;
-};
+type TAuthor = IAuthor;
 
 // Lấy tất cả record
 const findAll = async () => {

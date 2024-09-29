@@ -1,19 +1,19 @@
 import createError from "http-errors";
 // Kết nối trực tiếp với Database
-import Product from "../models/product.model";
+import ReviewProduct from "../models/reviewProduct";
 import { ObjectId } from "mongoose";
-import { IProduct } from "../types/models";
+import { IReviewProduct } from "../types/models";
 
-type TProduct = IProduct;
+type TReviewProduct = IReviewProduct;
 
 // Lấy tất cả record
 const findAll = async () => {
   /**
    * SELECT * FROM brands
    */
-  const products = await Product.find();
+  const reviewProduct = await ReviewProduct.find();
   //console.log('<<=== 🚀 brands ===>>',brands);
-  return products;
+  return reviewProduct;
 };
 
 // Tìm 1 record theo ID
@@ -22,53 +22,53 @@ const findById = async (id: string) => {
   /**
    * SELECT * FROM brands WHERE id = ''
    */
-  const product = await Product.findById(id);
+  const reviewProduct = await ReviewProduct.findById(id);
 
   /* Bắt lỗi khi ko tìm thấy thông tin */
-  if (!product) {
-    throw createError(400, "product Not Found");
+  if (!reviewProduct) {
+    throw createError(400, "reviewProduct Not Found");
   }
 
-  return product;
+  return reviewProduct;
 };
 
-const createRecord = async (payload: TProduct) => {
+const createRecord = async (payload: TReviewProduct) => {
   console.log("<<=== 🚀 payload ===>>", payload);
 
-  const product = await Product.create(payload);
+  const reviewProduct = await ReviewProduct.create(payload);
 
-  console.log("<<=== 🚀 create product ===>>", product);
+  console.log("<<=== 🚀 create product ===>>", reviewProduct);
 
   //Trả lại record vừa thêm mới
-  return product;
+  return reviewProduct;
 };
 
-const updateById = async (id: string, payload: TProduct) => {
+const updateById = async (id: string, payload: TReviewProduct) => {
   //b1.Kiểm tra sự tồn tại của danh mục có id này
-  const product = await Product.findByIdAndUpdate(id, payload, {
+  const reviewProduct = await ReviewProduct.findByIdAndUpdate(id, payload, {
     new: true, // nó trả về record sau khi update
   });
-  console.log("<<=== 🚀 product ===>>", product);
+  console.log("<<=== 🚀 reviewProduct ===>>", reviewProduct);
 
   /* Bắt lỗi khi ko tìm thấy thông tin */
-  if (!product) {
+  if (!reviewProduct) {
     throw createError(400, "product Not Found");
   }
 
   //Return về record vừa đc update
-  return product;
+  return reviewProduct;
 };
 
 const deleteById = async (id: string) => {
   //b1 Kiểm tra xem tồn tại product có id
-  const product = await Product.findByIdAndDelete(id);
+  const reviewProduct = await ReviewProduct.findByIdAndDelete(id);
 
-  if (!product) {
-    throw createError(400, "product Not Found");
+  if (!reviewProduct) {
+    throw createError(400, "reviewProduct Not Found");
   }
 
   //Return về record vừa xóa
-  return product;
+  return reviewProduct;
 };
 
 export default {

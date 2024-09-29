@@ -1,19 +1,19 @@
 import createError from "http-errors";
 // Kết nối trực tiếp với Database
-import Product from "../models/product.model";
+import Supplier from "../models/supplier";
 import { ObjectId } from "mongoose";
-import { IProduct } from "../types/models";
+import { ISupplier } from "../types/models";
 
-type TProduct = IProduct;
+type TSupplier = ISupplier;
 
 // Lấy tất cả record
 const findAll = async () => {
   /**
    * SELECT * FROM brands
    */
-  const products = await Product.find();
+  const suppliers = await Supplier.find();
   //console.log('<<=== 🚀 brands ===>>',brands);
-  return products;
+  return suppliers;
 };
 
 // Tìm 1 record theo ID
@@ -22,53 +22,53 @@ const findById = async (id: string) => {
   /**
    * SELECT * FROM brands WHERE id = ''
    */
-  const product = await Product.findById(id);
+  const supplier = await Supplier.findById(id);
 
   /* Bắt lỗi khi ko tìm thấy thông tin */
-  if (!product) {
-    throw createError(400, "product Not Found");
+  if (!supplier) {
+    throw createError(400, "Supplier Not Found");
   }
 
-  return product;
+  return supplier;
 };
 
-const createRecord = async (payload: TProduct) => {
+const createRecord = async (payload: TSupplier) => {
   console.log("<<=== 🚀 payload ===>>", payload);
 
-  const product = await Product.create(payload);
+  const supplier = await Supplier.create(payload);
 
-  console.log("<<=== 🚀 create product ===>>", product);
+  console.log("<<=== 🚀 create supplier ===>>", supplier);
 
   //Trả lại record vừa thêm mới
-  return product;
+  return supplier;
 };
 
-const updateById = async (id: string, payload: TProduct) => {
+const updateById = async (id: string, payload: TSupplier) => {
   //b1.Kiểm tra sự tồn tại của danh mục có id này
-  const product = await Product.findByIdAndUpdate(id, payload, {
+  const supplier = await Supplier.findByIdAndUpdate(id, payload, {
     new: true, // nó trả về record sau khi update
   });
-  console.log("<<=== 🚀 product ===>>", product);
+  console.log("<<=== 🚀 supplier ===>>", supplier);
 
   /* Bắt lỗi khi ko tìm thấy thông tin */
-  if (!product) {
-    throw createError(400, "product Not Found");
+  if (!supplier) {
+    throw createError(400, "supplier Not Found");
   }
 
   //Return về record vừa đc update
-  return product;
+  return supplier;
 };
 
 const deleteById = async (id: string) => {
-  //b1 Kiểm tra xem tồn tại product có id
-  const product = await Product.findByIdAndDelete(id);
+  //b1 Kiểm tra xem tồn tại supplier có id
+  const supplier = await Supplier.findByIdAndDelete(id);
 
-  if (!product) {
-    throw createError(400, "product Not Found");
+  if (!supplier) {
+    throw createError(400, "Supplier Not Found");
   }
 
   //Return về record vừa xóa
-  return product;
+  return supplier;
 };
 
 export default {
