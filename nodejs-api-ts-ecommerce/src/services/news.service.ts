@@ -13,7 +13,7 @@ const findAll = async () => {
 const findById = async (id: string) => {
   const news = await News.findById(id, "-__v -id");
   // Check tồn tại
-  if (!news) throw createError(400, "New not found");
+  if (!news) throw createError(400, "News not found");
   return news;
 };
 
