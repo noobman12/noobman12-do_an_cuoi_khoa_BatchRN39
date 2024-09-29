@@ -1,9 +1,9 @@
-import { CgMenuGridR, CgLayoutList } from "react-icons/cg";
-import { FaCaretUp, FaCaretDown } from "react-icons/fa";
-import { useState } from "react";
+import { sortProducts } from "../utils/sortProducts";
 import ProductCard from "./ProductCard";
 import ProductCardGrid from "./ProductCardGrid";
-import { sortProducts } from "../utils/sortProducts";
+import { useState } from "react";
+import { CgMenuGridR, CgLayoutList } from "react-icons/cg";
+import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 
 function ShopProducts() {
   const [isGridView, setIsGridView] = useState(true);
@@ -67,18 +67,18 @@ function ShopProducts() {
     sortOption === "Featured" ? products : sortProducts(products, sortOption);
 
   return (
-    <div className="mx-4 md:mx-[230px] my-[80px] md:my-[150px] flex flex-col gap-[40px] md:gap-[56px]">
-      <div className="h-[48px] py-[8px] border-b-[1px] border-black flex justify-between pb-[20px] md:pb-[40px]">
-        <div className="h-[32px] flex items-center relative justify-center border-black border-[1px]">
+    <div className='mx-4 md:mx-[230px] my-[80px] md:my-[150px] flex flex-col gap-[40px] md:gap-[56px]'>
+      <div className='h-[48px] py-[8px] border-b-[1px] border-black flex justify-between pb-[20px] md:pb-[40px]'>
+        <div className='h-[32px] flex items-center relative justify-center border-black border-[1px]'>
           <div
             onClick={() => setIsGridView(true)}
-            className="cursor-pointer px-1 transition-colors duration-300 hover:text-blue-700 z-10"
+            className='cursor-pointer px-1 transition-colors duration-300 hover:text-blue-700 z-10'
           >
             <CgMenuGridR size={23} />
           </div>
           <div
             onClick={() => setIsGridView(false)}
-            className="cursor-pointer px-1 transition-colors duration-300 hover:text-blue-700 z-10"
+            className='cursor-pointer px-1 transition-colors duration-300 hover:text-blue-700 z-10'
           >
             <CgLayoutList size={33} />
           </div>
@@ -88,37 +88,37 @@ function ShopProducts() {
             } w-[36px] h-[31px] bg-[#595959] opacity-80`}
           />
         </div>
-        <div className="relative text-[14px] text-[#fff] raleway">
+        <div className='relative text-[14px] text-[#fff] raleway'>
           <button
             onClick={toggleDropdown}
-            className="p-2 flex justify-between text-left w-full md:w-[157px] bg-[#24201c]"
+            className='p-2 flex justify-between text-left w-full md:w-[157px] bg-[#24201c]'
           >
             {sortOption}
             {isDropdownOpen ? <FaCaretUp /> : <FaCaretDown />}
           </button>
           {isDropdownOpen && (
-            <div className="absolute z-2 mt-2 w-full bg-[#595959] shadow-lg">
+            <div className='absolute z-2 mt-2 w-full bg-[#595959] shadow-lg'>
               <ul>
                 <li
-                  className="py-1 px-2 hover:bg-[#24201c] cursor-pointer"
+                  className='py-1 px-2 hover:bg-[#24201c] cursor-pointer'
                   onClick={() => handleSortChange("Alphabetically, A-Z")}
                 >
                   Alphabetically, A-Z
                 </li>
                 <li
-                  className="py-1 px-2 hover:bg-[#24201c] cursor-pointer"
+                  className='py-1 px-2 hover:bg-[#24201c] cursor-pointer'
                   onClick={() => handleSortChange("Alphabetically, Z-A")}
                 >
                   Alphabetically, Z-A
                 </li>
                 <li
-                  className="py-1 px-2 hover:bg-[#24201c] cursor-pointer"
+                  className='py-1 px-2 hover:bg-[#24201c] cursor-pointer'
                   onClick={() => handleSortChange("Price, high to low")}
                 >
                   Price, high to low
                 </li>
                 <li
-                  className="py-1 px-2 hover:bg-[#24201c] cursor-pointer"
+                  className='py-1 px-2 hover:bg-[#24201c] cursor-pointer'
                   onClick={() => handleSortChange("Price, low to high")}
                 >
                   Price, low to high
@@ -131,10 +131,10 @@ function ShopProducts() {
       <div>
         {isGridView ? (
           <div
-            className={`grid grid-cols-1 md:grid-cols-3 gap-[20px] md:gap-[56px]`}
+            className={`grid grid-cols-1 md:grid-cols-3 gap-[20px] md:gap-[56px] justify-items-center`}
           >
             {sortedProducts.map((product, index) => (
-              <div className="flex-shrink-0 md:w-[30%]">
+              <div className='flex-shrink-0 sm:w-[30%] md:w-[100%]'>
                 <ProductCard
                   key={index}
                   {...{ ...product }}

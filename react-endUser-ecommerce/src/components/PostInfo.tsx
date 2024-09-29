@@ -54,7 +54,7 @@ export const PostInfo = ({
         {paragraph}
       </p>
       <a href='#'>
-        <div className='font-raleway font-light text-[16px] mt-[24px] border-2 border-[#24201C] sm:w-[120px] sm:h-[28px] md:w-[150px] md:h-[32px] lg:w-[183px] lg:h-[43px] content-center text-center'>
+        <div className='hover:bg-[#24201C] hover:text-[white] font-raleway font-light text-[16px] mt-[24px] border-2 border-[#24201C] sm:w-[120px] sm:h-[28px] md:w-[150px] md:h-[32px] lg:w-[183px] lg:h-[43px] content-center text-center'>
           READ MORE
         </div>
       </a>

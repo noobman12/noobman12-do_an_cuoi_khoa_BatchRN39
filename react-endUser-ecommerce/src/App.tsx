@@ -1,5 +1,7 @@
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
+import AboutPage from "./pages/AboutPage";
+import { ContactPage } from "./pages/ContactPage";
 import Faq from "./pages/Faq";
 import { News } from "./pages/News";
 import Home from "./pages/home";
@@ -17,8 +19,10 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/collection' element={<News />} />
-            <Route path='/news' element={<News />} />
+            <Route path='/blog' element={<News />} />
             <Route path='/faq' element={<Faq />} />
+            <Route path='/about' element={<AboutPage />} />
+            <Route path='/contact' element={<ContactPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
