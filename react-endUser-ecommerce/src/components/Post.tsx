@@ -1,5 +1,5 @@
-import React from "react";
 import { PostInfo } from "./PostInfo";
+import React from "react";
 
 const Post = ({ image }: { image: string }) => {
   return (
@@ -10,7 +10,7 @@ const Post = ({ image }: { image: string }) => {
         className='thumbnail w-full h[214px] lg:h-[491px] object-cover '
       />
       <PostInfo
-        user='By Ram M'
+        user='Ram M'
         time='November 26, 2024'
         commentNumber={1}
         title='Today a reader, tomorrow a leader'

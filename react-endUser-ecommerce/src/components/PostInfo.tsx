@@ -18,7 +18,7 @@ export const PostInfo = ({
       <div className='flex'>
         <div className='flex items-center user mt-[14px] lg:mt-[24px]'>
           <img
-            src='/public/images/icon-user.png'
+            src='/images/icon-user.png'
             alt=''
             className='sm:w-[13px] sm:h-[13px] md:w-[20px] md:h-[20px] object-cover mt-[8px] md:mt-[10px] lg:mt-[3px]'
           />
@@ -28,7 +28,7 @@ export const PostInfo = ({
         </div>
         <div className='flex items-center time mt-[24px]  border-l-[1px] border-[#000000] pl-[12px]'>
           <img
-            src='/public/images/icon-calendar.png'
+            src='/images/icon-calendar.png'
             alt=''
             className='w-[20px] h-[20px] object-cover mt-[6px] md:m-[3px]'
           />
@@ -38,7 +38,7 @@ export const PostInfo = ({
         </div>
         <div className='flex items-center comment-number mt-[24px] border-l-[1px] border-[#000000] pl-[12px]'>
           <img
-            src='/public/images/icon-chat.png'
+            src='/images/icon-chat.png'
             alt=''
             className='w-[20px] h-[20px] object-cover mt-[8px] md:m-[3px]'
           />

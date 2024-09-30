@@ -11,7 +11,7 @@ const Banner = ({
     <div
       className='flex justify-center items-center'
       style={{
-        backgroundImage: "url('/public/images/Banner_1.png')",
+        backgroundImage: "url('/images/Banner_1.png')",
         width: "100%",
         height: "256px",
         opacity: "0.6",
