@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import writerService from "../services/writer.service";
 import { sendJsonErrors, sendJsonSuccess } from "../helpers/responseHandle";
-import { write } from "fs";
 
 const createRecord = async (
   req: Request,
