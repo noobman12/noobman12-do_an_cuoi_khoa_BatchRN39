@@ -1,10 +1,10 @@
 import express, { Express, Request, Response } from "express";
 import path from "path";
 
-import authorsRoute from "./routes/authors.route";
-import productsRoute from "./routes/products.route";
-import suppliersRoute from "./routes/suppliers.route";
-import reviewProductsRoute from "./routes/reviewProducts.route";
+import authorsRoute from "./routes/v1/authors.route";
+import productsRoute from "./routes/v1/products.route";
+import suppliersRoute from "./routes/v1/suppliers.route";
+import reviewProductsRoute from "./routes/v1/reviewProducts.route";
 
 const app: Express = express();
 

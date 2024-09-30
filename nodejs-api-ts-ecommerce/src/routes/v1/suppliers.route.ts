@@ -1,5 +1,5 @@
 import express from "express";
-import suppliersController from "../controllers/suppliers.controller";
+import suppliersController from "../../controllers/suppliers.controller";
 const router = express.Router();
 
 //1. Get All Brands
