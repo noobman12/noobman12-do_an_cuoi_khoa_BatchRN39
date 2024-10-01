@@ -1,9 +1,10 @@
-import Banner from "@/components/Banner";
+import PageBanner from "../components/PageBanner";
 import ShopProducts from "../components/ShopProducts";
+
 function shop() {
   return (
     <div>
-      <Banner bannerTitle='Collection' bannerUrl='HOME/ BEST SELLING' />
+      <PageBanner pageName='Collection' urlPage='HOME/ BEST SELLING' />
       <ShopProducts />
     </div>
   );

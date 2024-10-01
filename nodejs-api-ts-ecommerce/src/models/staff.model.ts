@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcrypt";
 import { role } from "../constants/staff.constant";
+import mongooseLeanVirtuals from "mongoose-lean-virtuals";
 
 const staffSchema = new Schema(
   {
@@ -65,6 +66,8 @@ staffSchema.virtual("roleTitle").get(function () {
 staffSchema.virtual("fullName").get(function () {
   return this.first_name + " " + this.last_name;
 });
+
+// staffSchema.plugin(mongooseLeanVirtuals);
 
 const saltRounds = 10;
 

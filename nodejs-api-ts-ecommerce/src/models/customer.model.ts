@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 
+import mongooseLeanVirtuals from "mongoose-lean-virtuals";
 const customerSchema = new Schema(
   {
     first_name: {
@@ -65,6 +66,8 @@ const customerSchema = new Schema(
 customerSchema.virtual("fullName").get(function () {
   return this.first_name + " " + this.last_name;
 });
+
+// customerSchema.plugin(mongooseLeanVirtuals);
 
 customerSchema.set("toJSON", { virtuals: true });
 customerSchema.set("toObject", { virtuals: true });

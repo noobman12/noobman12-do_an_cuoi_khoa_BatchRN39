@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+footer,
+.raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+}
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(128, 128, 128, 0.5); /* Gray shadow */
+}
+.hover\:text-shadow:hover {
+  text-shadow: 0 2px 4px rgba(128, 128, 128, 0.5); /* Gray shadow on hover */
+}

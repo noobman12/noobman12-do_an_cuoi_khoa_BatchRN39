@@ -1,11 +1,12 @@
 import { Schema, model } from "mongoose";
 import mongooseLeanVirtuals from "mongoose-lean-virtuals";
 import { orderStatus, paymentType } from "../constants/order.constant";
+import Product from "./product.model";
 
 const orderItemSchema = new Schema({
   product: {
     type: Schema.Types.ObjectId,
-    ref: "Product",
+    ref: Product,
     required: true,
   },
   quantity: {
