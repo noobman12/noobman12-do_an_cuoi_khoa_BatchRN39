@@ -9,7 +9,8 @@ import authorsRoute from "./routes/v1/authors.route";
 import productsRoute from "./routes/v1/products.route";
 import suppliersRoute from "./routes/v1/suppliers.route";
 import reviewProductsRoute from "./routes/v1/reviewProducts.route";
-
+import bannersRoute from "./routes/v1/banners.route"
+import categoriesRoute from "./routes/v1/categories.route"
 import newsRoute from "./routes/v1/news.route";
 import commentRoute from "./routes/v1/comment.route";
 import writerRoute from "./routes/v1/writer.route";
@@ -38,5 +39,7 @@ app.use("/api/v1/orders", orderRoute);
 app.use("/api/v1/news", newsRoute);
 app.use("/api/v1/comments", commentRoute);
 app.use("/api/v1/writers", writerRoute);
+app.use("/api/v1/banners", bannersRoute);
+app.use("/api/v1/categories", categoriesRoute);
 
 export default app;
