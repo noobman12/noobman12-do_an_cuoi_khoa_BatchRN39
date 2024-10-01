@@ -1,0 +1,14 @@
+POST http://localhost:8080/api/v1/news
+Content-type: "application/json; charset=UTF-8"
+
+{"title": "1",
+"slug": "loi-ich-cua-viec-doc-sach-moi-ngay",
+"writer": "66f58b0cc3fbb08d0f37a186",
+"shortDesc": "Những lợi ích không ngờ từ việc đọc sách hàng ngày.",
+"content": "Đọc sách không chỉ giúp mở mang kiến thức mà còn cải thiện kỹ năng tư duy, khả năng sáng tạo và sự hiểu biết về thế giới xung quanh. Nghiên cứu cho thấy, những người đọc sách thường xuyên có khả năng tập trung và ghi nhớ tốt hơn. Họ cũng có xu hướng phát triển kỹ năng giao tiếp và xã hội tốt hơn so với những người không đọc. Hãy biến việc đọc sách thành thói quen hàng ngày của bạn để cảm nhận những lợi ích tuyệt vời mà nó mang lại.",
+"thumbnail": "https://dt-bookmax.myshopify.com/cdn/shop/articles/blog08_600x.jpg?v=1658721372",
+"isPublish": true,
+"isDelete": false,
+"isHot": true
+}
+

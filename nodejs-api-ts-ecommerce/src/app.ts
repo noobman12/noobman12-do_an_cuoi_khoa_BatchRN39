@@ -10,21 +10,12 @@ import productsRoute from "./routes/v1/products.route";
 import suppliersRoute from "./routes/v1/suppliers.route";
 import reviewProductsRoute from "./routes/v1/reviewProducts.route";
 
+import newsRoute from "./routes/v1/news.route";
+import commentRoute from "./routes/v1/comment.route";
+import writerRoute from "./routes/v1/writer.route";
 const app: Express = express();
 
 const PORT = process.env.PORT || 9000;
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "../public")));
-
-app.use("/api/v1/authors", authorsRoute);
-app.use("/api/v1/products", productsRoute);
-app.use("/api/v1/suppliers", suppliersRoute);
-app.use("/api/v1/reviewProducts", reviewProductsRoute);
-app.use("/api/v1/customers", customerRoute);
-app.use("/api/v1/staffs", staffRoute);
-app.use("/api/v1/orders", orderRoute);
 
 app.use(cors());
 // Bắt dữ liệu từ body của request
@@ -33,5 +24,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //khai báo thư mục chứa tài nguyên tĩnh
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/api/v1/authors", authorsRoute);
+app.use("/api/v1/products", productsRoute);
+app.use("/api/v1/suppliers", suppliersRoute);
+app.use("/api/v1/reviewProducts", reviewProductsRoute);
+app.use("/api/v1/customers", customerRoute);
+app.use("/api/v1/staffs", staffRoute);
+app.use("/api/v1/orders", orderRoute);
+app.use("/api/v1/customers", customerRoute);
+app.use("/api/v1/staffs", staffRoute);
+app.use("/api/v1/orders", orderRoute);
+app.use("/api/v1/news", newsRoute);
+app.use("/api/v1/comments", commentRoute);
+app.use("/api/v1/writers", writerRoute);
 
 export default app;
